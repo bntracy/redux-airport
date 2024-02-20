@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import React, { useState } from 'react';
 
+import AirlineForm from '../AirlineForm/AirlineForm';
 import AirlineTable from '../AirlineTable/AirlineTable';
 
 function App() {
-  const dispatch = useDispatch();
-  const [newAirline, setNewAirline] = useState('');
 
-  const addAirline = () => {
-    dispatch({
-      type: 'AIRLINES_ADD',
-      payload: newAirline
-    });
-    setNewAirline('');
-  }
 
   return (
     <div>
       <h1>Redux Airport</h1>
-      <input value={newAirline} onChange={event => setNewAirline(event.target.value)} placeholder='Airline Name' />
-      <button onClick={addAirline}>Add Airline</button>
+      <AirlineForm />
       <table>{/* Airlines should be listed here */}<AirlineTable /></table>
     </div>
   );
