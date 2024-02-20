@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import AirlineTable from '../AirlineTable/AirlineTable';
+
 function App() {
   const dispatch = useDispatch();
   const [newAirline, setNewAirline] = useState('');
@@ -18,7 +20,7 @@ function App() {
       <h1>Redux Airport</h1>
       <input value={newAirline} onChange={event => setNewAirline(event.target.value)} placeholder='Airline Name' />
       <button onClick={addAirline}>Add Airline</button>
-      <table>{/* Airlines should be listed here */}</table>
+      <table>{/* Airlines should be listed here */}<AirlineTable /></table>
     </div>
   );
 }
