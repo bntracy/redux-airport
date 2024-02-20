@@ -11,6 +11,9 @@ import logger from 'redux-logger';
 /** TODO: Add REDUCERS */
 
 const airlines = (state =[], action) => {
+    if (action.type === 'AIRLINES_ADD') {
+        return [...state, action.payload];
+    }
     return state;
 }
 
